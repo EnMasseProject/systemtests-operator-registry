@@ -1,6 +1,5 @@
 
-ARG MANIFESTS_IMAGE
-FROM ${MANIFESTS_IMAGE} AS manifests_image
+FROM $MANIFESTS_IMAGE AS manifests_image
 
 FROM quay.io/openshift/origin-operator-registry:latest
 

@@ -1,3 +1,4 @@
 
 build:
-	docker build --build-arg MANIFESTS_IMAGE=${FROM} -t ${TAG} .
+	sed s,\$$MANIFESTS_IMAGE,${FROM},g Dockerfile.template > Dockerfile
+	docker build -t ${TAG} .
