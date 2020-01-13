@@ -1,4 +1,3 @@
-
 build:
-	sed s,\$$MANIFESTS_IMAGE,${FROM},g Dockerfile.template > Dockerfile
+	./copy_manifests.sh ${FROM}
 	docker build -t ${TAG} .
