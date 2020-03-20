@@ -6,7 +6,7 @@ if [[ "${REGISTRY}" != "" ]] && [[ "${REGISTRY}" != "image-registry.openshift-im
     find manifests -name "*.yaml" | xargs sed -e "s,registry.redhat.io/amq7/amq-online-,${REGISTRY}/rh-osbs/amq7-amq-online-,g" -i
     find manifests -name "*.yaml" | xargs sed -e "s,registry.redhat.io/amq7-tech-preview/amq-online-,${REGISTRY}/rh-osbs/amq7-tech-preview-amq-online-,g" -i
 elif [[ "${REGISTRY}" == "image-registry.openshift-image-registry.svc:5000" ]]; then
-    find manifests -name "*.yaml" | xargs sed -e "s,registry.redhat.io/amq7/amq-online-,${REGISTRY}/amq-online-images/amq7-amq-online-,g" -i
-    find manifests -name "*.yaml" | xargs sed -e "s,registry.redhat.io/amq7-tech-preview/amq-online-,${REGISTRY}/amq-online-images/amq7-tech-preview-amq-online-,g" -i
+    find manifests -name "*.yaml" | xargs sed -e "s,registry.redhat.io/amq7/amq-online-,${REGISTRY}/amq-online-images/amq-online-,g" -i
+    find manifests -name "*.yaml" | xargs sed -e "s,registry.redhat.io/amq7-tech-preview/amq-online-,${REGISTRY}/amq-online-images/amq-online-,g" -i
 fi
 docker rm -v $id
