@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-id=$(docker create $1)
+id=$(docker create $1 /bin/bash)
 REGISTRY=${2}
 docker cp $id:/manifests $PWD
 if [[ "${REGISTRY}" != "" ]] && [[ "${REGISTRY}" != "image-registry.openshift-image-registry.svc:5000" ]]; then
